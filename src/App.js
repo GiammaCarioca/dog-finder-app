@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import DogList from './DogList';
 import DogDetails from './DogDetails';
+import Navbar from './Navbar';
 import { Switch, Route } from 'react-router-dom';
 import hazel from './images/hazel.jpg';
 import tubby from './images/tubby.jpg';
@@ -50,10 +51,13 @@ class App extends Component {
 			return <DogDetails {...props} dog={currentDog} />;
 		};
 		return (
-			<Switch>
-				<Route exact path="/dogs" render={() => <DogList dogs={this.props.dogs} />} />
-				<Route exact path="/dogs/:name" render={getDog} />
-			</Switch>
+			<Fragment>
+				<Navbar dogs={this.props.dogs} />
+				<Switch>
+					<Route exact path="/dogs" render={() => <DogList dogs={this.props.dogs} />} />
+					<Route exact path="/dogs/:name" render={getDog} />
+				</Switch>
+			</Fragment>
 		);
 	}
 }
