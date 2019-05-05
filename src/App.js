@@ -4,7 +4,6 @@ import Navbar from './Navbar';
 import hazel from './images/hazel.jpg';
 import tubby from './images/tubby.jpg';
 import whiskey from './images/whiskey.jpg';
-import './App.css';
 
 class App extends Component {
 	static defaultProps = {
